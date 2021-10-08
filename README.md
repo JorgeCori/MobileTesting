@@ -91,7 +91,9 @@ If you can inspect your app with either one of the previous methods, you're good
 ### Java IDE, Maven Project and Dependencies
 You can use your IDE of preference to work with Appium, as long as you're able to create Maven projects, you're golden. 
 The dependencies you'll need to use are the following: 
+
 ´´´
+<!-- All dependencies come from maven repositories-->
 <dependency>
     <groupId>io.appium</groupId>
     <artifactId>java-client</artifactId>
@@ -106,7 +108,7 @@ The dependencies you'll need to use are the following:
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>7.4.0</version>
-    <scope>test</scope>
+    <scope>test</scope> 
 </dependency>
 ´´´
 
