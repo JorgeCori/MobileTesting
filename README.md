@@ -37,7 +37,7 @@ By this point you should have both Appium Server Installed and UIAutomatorView2 
 Feel free to change your Java Version or use the installation steps for prior versions( I recommend the latter). 
 
 ### Installing for Java 15/14 and later
-Well, I shouldn't say prior. The method I'm about to show was successful for me in Java 16, however, I don't know if it will continue to be in later versions.
+Well, I shouldn't say later. The method I'm about to show was successful for me in Java 16, however, I don't know if it will continue to be in later versions.
 This method is way shorter and more effective, in my opinion.
 
 1. Installing JDK: Head over to https://www.oracle.com/java/technologies/downloads/#jdk17-windows and download the JDK that corresponds to your OS and specifications. Follow the wizard normally to install Java.
@@ -65,7 +65,7 @@ Once you have a device up and running, you don't need to have AndroidStudio open
 
 ### App inspecting 
 
-You now should be ready to inspect apps that are currently running in your AVD. Let's check again how to do it depending on what you installer
+You should now be ready to inspect apps that are currently running in your AVD. Let's check again how to do it depending on what you installed
 
 #### With UIAutomator (Java prior to 14/15)
 Once you have an app running in your avd, go to the Command Prompt and enter 
@@ -86,4 +86,36 @@ Setup your Appium Desktop Client and inspector:
 		* platformName text Android
 		* platformVersion text VersionHere(11.0) 
 
-If you can inspecct your app with either one of the previous methods, you're good to go. 
+If you can inspect your app with either one of the previous methods, you're good to go. 
+
+### Java IDE, Maven Project and Dependencies
+You can use your IDE of preference to work with Appium, as long as you're able to create Maven projects, you're golden. 
+The dependencies you'll need to use are the following: 
+´´´
+<dependency>
+    <groupId>io.appium</groupId>
+    <artifactId>java-client</artifactId>
+    <version>7.5.1</version>
+</dependency>
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.141.59</version>
+</dependency>
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.4.0</version>
+    <scope>test</scope>
+</dependency>
+´´´
+
+## Testing with Appium 
+Appium is written on top of Selenium, so if you understand Selenium and TestNG you should get the hang of this pretty quickly. 
+Check my other repo for full notes on TestNG. Before I start with actual class in a way that the objects created are actually null and, thus, they're not found.
+I haven't found the solution to this, although it's probably by playing around with the versions of appium and selenium, but that's another story. 
+Having said that, the examples you'll find in this repo will not implement POM because I just couldn't make it work. I hope you can, because, you know, it's the best way to write code for testing. 
+
+### Your CapabilitesBuilder Class
+Just like in Selenium, we have to create a driver with certain capabilites so that it's able to automate stuff. We'll create a parent class *CapabilitiesBuilder.java* that will be used for the upcoming tests. 
+
