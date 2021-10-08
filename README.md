@@ -69,9 +69,9 @@ You should now be ready to inspect apps that are currently running in your AVD. 
 
 #### With UIAutomator (Java prior to 14/15)
 Once you have an app running in your avd, go to the Command Prompt and enter 
-´´´
-uiautomatorview2
-´´´
+```
+uiautomatorviewer2
+```
 And it should start the inspector that comes with AndroidStudio. If an error comes up, it probably is because it's not compatible with your Java Version. Downgrade or follow the steps for using the Appium Desktop Client. 
 
 #### With Appium Desktop Client 
@@ -92,7 +92,7 @@ If you can inspect your app with either one of the previous methods, you're good
 You can use your IDE of preference to work with Appium, as long as you're able to create Maven projects, you're golden. 
 The dependencies you'll need to use are the following: 
 
-´´´
+```
 <!-- All dependencies come from maven repositories-->
 <dependency>
     <groupId>io.appium</groupId>
@@ -110,7 +110,7 @@ The dependencies you'll need to use are the following:
     <version>7.4.0</version>
     <scope>test</scope> 
 </dependency>
-´´´
+```
 
 ## Testing with Appium 
 Appium is written on top of Selenium, so if you understand Selenium and TestNG you should get the hang of this pretty quickly. 
